@@ -1,0 +1,559 @@
+@import url("styles/scrollbar.css");
+
+/* BODY */
+@font-face {
+    font-family: 'Pixel';
+    src: url('fonts/Retro\ Gaming.ttf') format('woff2');
+}
+:root{
+	--darkest: #121276;
+	--darker: #2b57ba;
+    --lighter: #fffd38;
+	--lightest: #ffffff;
+}
+
+body{
+    overflow: hidden;
+    margin: 0%;
+    font-family: 'Pixel';
+}
+
+/* COLOR */
+.color{
+    filter: none;
+    cursor: default;
+}
+.color .pokedex p, .color .pika, .color #logo:hover, .color nav, .color nav a, 
+.color nav a:visited, .color nav a:hover, .color nav a:active, .color .pokePic, .myPoke img:hover{
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=113448), pointer;
+}
+
+/* RED */
+.red{
+    cursor: default;
+    filter: sepia(100%);
+}
+.red .pokedex p, .red .pika, .red #logo:hover, .red nav, .red nav a, .red nav a:visited, 
+.red nav a:hover, .red nav a:active, .red .pokePic, .red .myPoke img:hover{
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=113445), pointer;
+}
+
+/* B&N */
+.gray{
+    cursor: default;
+    filter: grayscale(100%);
+}
+.gray .pokedex p, .gray .pika, .gray #logo:hover, .gray nav, .gray nav a, .gray nav a:visited, 
+.gray nav a:hover, .gray nav a:active, .gray .pokePic, .gray .myPoke img:hover{
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=113438), pointer;
+}
+
+/* BLUE */
+.blue{
+    cursor: default;
+    filter: sepia(100%) hue-rotate(180deg) saturate();
+}
+.blue .pokedex p, .blue .pika, .blue #logo:hover, .blue nav, .blue nav a, .blue nav a:visited, 
+.blue nav a:hover, .blue nav a:active, .blue .pokePic, .blue .myPoke img:hover{
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=113446), pointer;
+}
+
+/* BALL MENU */
+
+.pokeBalls{
+    position: absolute;
+    width: 50px;
+    margin: 10px;
+}
+.pokeBalls:hover{
+   cursor: pointer;
+}
+#vColor{
+    z-index: 100000;
+}
+#vRed{
+    z-index: 100000;
+    right: 0px;
+    filter: sepia(100%);
+}
+#vGray{
+    z-index: 100000;
+    bottom: 0px;
+    filter: grayscale(100%);
+}
+#vBlue{
+    z-index: 100000;
+    bottom: 0px;
+    right: 0px;
+    filter: sepia(100%) hue-rotate(180deg);
+}
+.bg{ 
+    z-index: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100vw;
+    height: 100vh;
+    background: none;
+    background-position: right;
+    /* background-repeat: repeat; */
+    
+}
+header, main{
+    z-index: 20000;
+}
+.sky{
+    background-size: cover;
+    animation: backgroundMove 15s infinite;
+    animation-timing-function: linear;
+    background-image: url("img/bg.jpg");
+}
+@keyframes backgroundMove{
+    from {background-position: 0px;}
+    to {background-position: 790px;}
+}
+.night{
+    background-size: cover;
+    background-image: url("img/nite.png");
+}
+.pc{
+    background-size: cover;
+    background-image: url("img/windows.jpg")
+}
+.grass{
+    filter: brightness(100%);
+    /* animation-iteration-count: 5; */
+    animation: caution 0.5s 2;
+    background-size: 10%;
+    background-repeat: repeat;
+    background-image: url("img/grass.png");
+}
+@keyframes caution{
+    30%{filter: brightness(300%);}
+    60%{filter: brightness(100%);}
+    100%{filter: brightness(0%);}
+}
+.reload img{
+    cursor: pointer!important;
+    width: 30px;
+}
+.light{
+    color: var(--lighter);
+}
+.dark{
+    color: var(--darkest);
+}
+/* HEADER */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.bg #logo{
+    margin-top: 20px;
+    width: 150px;
+    height: 58px;
+    display: flex;
+}
+nav{
+    margin-top: 15px;
+}
+nav, nav a, nav a:visited, nav a:hover, nav a:active{
+    text-decoration: none;
+}
+
+.pc nav, .pc nav a, .pc nav a:visited, .pc nav a:active, .sky nav, .sky nav a, .sky nav a:visited, .sky nav a:active{
+    color:var(--darkest);
+}
+.night nav a:hover{
+    color:var(--lightest)!important;
+}
+.grass nav a:hover, .pc nav a:hover{
+    color: var(--lighter)!important;
+} 
+.night nav, .night nav a, .night nav a:visited, .night nav a:active{
+    color: var(--lighter);
+}
+.grass nav, .grass nav a, .grass nav a:active, .grass nav a:visited{
+    color:var(--darkest);
+} 
+.sky nav a:hover{
+    color: var(--darker);
+}
+current-item{
+    text-decoration: underline;
+}
+
+/* CONTENT */
+.block{
+    border-radius: 10px;
+    margin: 2% 0%;
+    padding: 2%;
+    text-align: center;
+    width: 35vw;
+    z-index: 20000;
+}
+.blockDark{
+    border: 2pt dotted var(--lightest);
+    color: var(--lightest);
+    background-color: var(--darkest);
+}
+.blockLight{
+    margin-top: -20px;
+    border: 2pt dotted var(--darkest);
+    color: var(--darkest);
+    background-color: var(--lightest);
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.pokedex{
+    overflow-y: scroll;
+    text-transform: capitalize;
+    color: var(--lightest);
+    border-radius: 10px;
+    margin: 2%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 92%;
+    height: 350px;
+    background-size: cover;
+    background: url("img/nite.png");
+}
+.computer{
+    text-transform: capitalize;
+    overflow-y: scroll;
+    color: var(--lightest);
+    border-radius: 10px;
+    margin: 2%;
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-self: center;
+    width: 92%;
+    height: 350px;
+    background-size: cover;
+    background-color: var(--darkest);
+    /* background-image: url("img/bg-bill.jpg"); */
+}
+.myPoke{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+.pokedex p{
+    border-radius: 4px;
+}
+.pokedex p:hover{
+    background-color: var(--lighter);
+    color: var(--darkest);
+}
+.grass .blockLight{
+        animation: darkLight 2s;
+}
+@keyframes darkLight{
+    0%{filter: brightness(0%);}
+    25%{filter: brightness(0%);}
+    50%{filter: brightness(0%);}
+    75%{filter: brightness(100%);}
+    100%{filter: brightness(100%);}
+}
+.infoPoke{
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    border: 2pt dotted var(--lightest);
+    padding: 5%;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    width: 40vw;
+    border-radius: 10px;
+    background: url(img/bg-pokedex.png);
+    height: 400px;
+    z-index: 2000;
+    text-align: left;
+    color: var(--lightest);
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+
+.infoPoke h2{
+    text-transform: capitalize;
+    text-align: center;
+}
+.infoPoke img{
+    width: 150px;
+    margin: 0 auto;
+}
+.pokePic{
+    margin: 0 auto;
+}
+.pika:active,
+.pokePic:active,
+.myPoke:active{
+       filter: brightness(75%) contrast(150%) hue-rotate(-10deg);;
+}
+.overlay{
+    display: none;
+    justify-content: center;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background-color: rgba(0,0,0, 0.8);
+    width: 100vw;
+    height: 100vh;
+}
+#previousInfo, #nextInfo{
+    display: none;
+    position: absolute;
+    font-size: 30pt;
+    width: 30px;
+    z-index: 400000;
+    color: white;
+    top: 50vh;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+#previousInfo:hover, #nextInfo:hover{
+    cursor: pointer;
+}
+#previousInfo{
+    left: 20px;
+} 
+
+#nextInfo{
+    right: 20px;
+}
+#closeInfo{
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    font-size: 30pt;
+    width: 30px;
+    z-index: 20000;
+    color: white;
+    top: 10px;
+    right: 20px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+::-moz-selection { 
+	background: none!important;
+}
+
+::selection {
+	background: none!important;
+}
+.randomPoke img{
+    width: 30%;
+}
+.randomPokeBall{
+    position: absolute;
+    display: flex;
+    left: calc(50vw - 2%);
+}
+.randomPokeBall img{
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+}
+.rotate{
+    animation: rotate 1s infinite;
+}
+.rotateStop{
+    animation: rotate 1s;
+}
+.randomPokeBall:hover{
+    animation-play-state: paused;
+}
+.catchYes{
+    position: absolute;
+    display: flex;
+    animation: catchPokeYes 2s forwards;
+    transition-timing-function: ease-in-out;
+}
+.pokeCatched{
+    animation: catchedPoke 2s forwards;
+}
+.pokeNoCatched{
+    animation: slide-out-left 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+.catchNo{
+    position: absolute;
+    display: flex;
+    animation: catchPokeNo 2s forwards;
+    transition-timing-function: ease-in-out;
+}
+.sparkle{
+    transition: 5s;
+    background-size: 50%;
+    background-repeat: repeat;
+    background-image: url("img/spark.gif");
+    color: var(--lightest);
+    background-color: var(--darker);
+}
+.opacity{
+    opacity: 0;
+    animation: opacityAppear 3s forwards;
+}
+audio{
+    display: none;
+}
+
+@keyframes slide-out-left {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    25% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        opacity: 1;
+      }
+    50% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        opacity: 1;
+      }
+    100% {
+      -webkit-transform: translateX(-1000px);
+              transform: translateX(-1000px);
+      opacity: 0;
+    }
+} 
+  
+@keyframes opacityAppear{ 
+    25%{opacity:0;}
+    50%{opacity:0;}
+    100%{opacity:1;}
+}
+@keyframes catchedPoke{ 
+    25%{opacity:1;}
+    50%{opacity:1;}
+    100%{opacity:0;}
+}
+@keyframes catchPokeYes{
+    25%{top: 78vh; visibility: visible; background: none;}
+    50%{top: 55vh; visibility: visible; background: none;}
+    75%{top: 55vh; visibility: visible; background: none;}
+    100%{top: 55vh; visibility: visible; background: url("img/spark.gif");}
+}
+@keyframes catchPokeNo{
+    25%{top: 78vh; filter: brightness(100%);}
+    50%{top: 55vh; filter: brightness(100%);}
+    75%{top: 55vh; filter: brightness(100%);}
+    100%{top: 55vh; filter: brightness(0%);}
+}
+@keyframes rotate{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg)}
+}
+
+/* FOOTER */
+footer{
+    margin-bottom: 25px;
+}
+
+/* QUERYS */
+@media (max-width: 1240px){
+    .infoPoke,.block{
+        width: 50vw;
+    }
+}
+@media (max-width: 850px){
+    .infoPoke,.block{
+        width: 75vw;
+    }
+}
+@media (max-width: 580px){
+    .infoPoke,.block{
+        width: 75vw;
+    }
+    footer{
+        width: 50vw;
+        text-align: center;
+        position: absolute;
+        bottom: 0px;
+    }
+    nav{
+        top: 0px;
+        padding: 10px 0px;
+        width: 80vw;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .reload{
+        margin-bottom: 2vh;
+    }
+    .bg{ 
+        z-index: 0;
+        display: flex;
+        justify-content: start;
+    }
+    current-item,
+    nav a{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .separator{
+        display: none;
+    }
+    .blockLight{
+        margin-top: 0px;
+    }
+    .pokedex, .computer{
+        height: 35vh;
+    }
+    .type span{
+        text-transform: capitalize;
+    }
+    .randomPokeBall{
+        left: 45vw;
+    }
+    @keyframes catchPokeYes{
+        25%{top: 78vh; visibility: visible; background: none;}
+        50%{top: 60vh; visibility: visible; background: none;}
+        75%{top: 60vh; visibility: visible; background: none;}
+        100%{top: 60vh; visibility: visible; background: url("img/spark.gif");}
+    }
+    @keyframes catchPokeNo{
+        25%{top: 78vh; filter: brightness(100%);}
+        50%{top: 60vh; filter: brightness(100%);}
+        75%{top: 60vh; filter: brightness(100%);}
+        100%{top: 60vh; filter: brightness(0%);}
+    }
+}

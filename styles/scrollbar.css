@@ -1,0 +1,14 @@
+.pokedex::-webkit-scrollbar {
+  width: 20px;
+}
+
+.pokedex::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+.pokedex::-webkit-scrollbar-thumb {
+  background: url("../img/favicon.png");
+  background-size: cover;
+  border-radius: 10px;
+}
